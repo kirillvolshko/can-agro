@@ -1,0 +1,64 @@
+import { cn } from "../../lib/utils";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+  FormDescription,
+  FormLabel,
+} from "./form";
+import { Control, FieldValues, Path } from "react-hook-form";
+import { Textarea } from "./textarea";
+
+interface TextareaFieldProps<T extends FieldValues> {
+  control: Control<T>;
+  name: Path<T>;
+  label?: string;
+  placeholder?: string;
+  description?: string;
+  classNameItem?: string;
+  classNameTextarea?: string;
+}
+
+const TextareaField = <T extends FieldValues>({
+  control,
+  name,
+  label,
+  placeholder,
+  description,
+  classNameItem,
+  classNameTextarea,
+}: TextareaFieldProps<T>) => {
+  return (
+    <FormField
+      control={control}
+      name={name}
+      render={({ field }) => (
+        <FormItem className={cn("group", classNameItem)}>
+          <div className="grid gap-2 w-full">
+            {label && (
+              <div className="flex md:flex-row gap-4 w-full justify-between items-center">
+                <FormLabel className="text-white">{label}</FormLabel>
+                <FormMessage className="text-sm font-medium leading-none" />
+              </div>
+            )}
+            <FormControl>
+              <Textarea
+                value={field.value ?? ""}
+                placeholder={placeholder}
+                className={cn(
+                  "resize-none min-h-[100px] placeholder:text-[#B6B7BB] placeholder:font-rubik placeholder:text-[16px] placeholder:font-medium",
+                  classNameTextarea
+                )}
+                {...field}
+              />
+            </FormControl>
+          </div>
+          {description && <FormDescription>{description}</FormDescription>}
+        </FormItem>
+      )}
+    />
+  );
+};
+
+export default TextareaField;
