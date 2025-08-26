@@ -18,7 +18,22 @@ const rubikFont = Rubik({
 
 export const metadata: Metadata = {
   title: "Can Agro",
-  description: "Can Agro",
+  description:
+    "We provide modern agricultural machinery, innovative solutions and trusted partnerships to help farmers achieve more.",
+  keywords: [
+    "Agriculture",
+    "Farming",
+    "Machinery",
+    "Can Agro",
+    "Sustainable Farming",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://can-agro.com",
+  },
 };
 
 export default function RootLayout({

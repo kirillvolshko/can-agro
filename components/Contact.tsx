@@ -80,10 +80,10 @@ const Contact = forwardRef<HTMLElement, {}>((props, ref) => {
             </div>
 
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.497232212982!2d-98.01613692353219!3d49.19112627723323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52c24eecf0f77cff%3A0xa17deebc34e28305!2zMjQwODQgTUItMywgV2lua2xlciwgTUIgUjZXIDRCMSwg0JrQsNC90LDQtNCw!5e0!3m2!1suk!2sua!4v1754760579394!5m2!1suk!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.4662145169377!2d-98.01630062376411!3d49.19171477137922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52c24eecf12b9a47%3A0x9cf49b69622f979!2sCanAgro%20Exports%20Inc!5e0!3m2!1sen!2sca!4v1756218599412!5m2!1sen!2sca"
+              className="w-[388px] h-[400px] md:w-full md:h-[460px] rounded-[2px] border border-#DEDFE1"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-[388px] h-[400px] md:w-full md:h-[460px] rounded-[2px] border border-#DEDFE1"
             ></iframe>
           </div>
         </div>

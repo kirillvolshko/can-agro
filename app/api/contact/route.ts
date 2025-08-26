@@ -95,7 +95,7 @@ export async function POST(req: Request) {
 
     const leadId = await execute_kw(uid, "crm.lead", "create", [
       {
-        contact_name: formData.contact_name || "John Doe",
+        contact_name: formData.name || "John Doe",
         email_from: formData.email || "contact@example.com",
         mobile: formData.phone || "+1 (204) 325-1234",
         name: formData.message || "Subject",
