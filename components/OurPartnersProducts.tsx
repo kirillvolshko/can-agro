@@ -48,6 +48,11 @@ const OurPartnersProducts = forwardRef<HTMLElement, ProductsSectionProps>(
       };
     }, [visibleCount]);
 
+    const handleContactClick = () => {
+      setVisibleCount(ourpartnersData.length);
+      onContactClick();
+    };
+
     return (
       <section
         ref={ref}
@@ -71,7 +76,7 @@ const OurPartnersProducts = forwardRef<HTMLElement, ProductsSectionProps>(
                 return (
                   <div
                     key={item.srcLogo + index}
-                    className="flex flex-col border bg-[#FBFBFD] group border-[#DEDFE1] rounded-[2px] relative hover:z-10 min-h-[512px] md:min-h-[732px] cursor-pointer hover:shadow-xl hover:bg-white md:w-[50%]"
+                    className="flex flex-col border bg-[#FBFBFD] group border-[#DEDFE1] rounded-[2px] relative hover:z-10 min-h-[532px] md:min-h-[732px] cursor-pointer hover:shadow-xl hover:bg-white md:w-[50%]"
                   >
                     <div className="p-5 flex-col md:flex justify-center w-full">
                       <Image
@@ -96,8 +101,8 @@ const OurPartnersProducts = forwardRef<HTMLElement, ProductsSectionProps>(
                                   className="w-[388px] h-[200px] md:w-[470px] md:h-[300px] object-contain md:object-center"
                                 />
                               </div>
-                              <div className="p-5 pt-10 flex flex-col gap-2.5 border-t border-[#DEDFE1]">
-                                <p className="font-rubik font-bold text-[18px] h-[50px] text-[#373745] md:h-[69px]">
+                              <div className="p-5 pt-10 flex flex-col gap-4 border-t border-[#DEDFE1]">
+                                <p className="font-rubik font-bold text-[18px] h-[60px] text-[#373745] md:h-[69px]">
                                   {prod.title}
                                 </p>
                                 <p className="font-rubik font-light text-[#373745] text-[14px] md:text-[16px]">
@@ -123,7 +128,7 @@ const OurPartnersProducts = forwardRef<HTMLElement, ProductsSectionProps>(
                           <CarouselNext className="bg-transparent border-none hover:bg-transparent hover:cursor-pointer shadow-none" />
                         </div>
                         <Button
-                          onClick={onContactClick}
+                          onClick={handleContactClick}
                           className="w-[133px] h-[42px] cursor-pointer ms-auto bg-[#E2F2EF] text-[#07695A] rounded-full py-[10px] px-[24px] flex items-center justify-center font-rubik font-bold text-[16px]"
                         >
                           Contact us

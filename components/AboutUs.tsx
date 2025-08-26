@@ -45,9 +45,9 @@ const AboutUs = ({ onContactClick }: AboutUsSectionProps) => {
                     <Image
                       alt={item.title}
                       src={"/partnersHome" + item.image}
-                      className="w-[283px] h-[273px] ms-[90px]"
-                      width={283}
-                      height={273}
+                      className="w-[263px] h-[253px] ms-[66px]"
+                      width={263}
+                      height={253}
                     />
                   </div>
                   <div className="flex flex-col gap-5">

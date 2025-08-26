@@ -9,7 +9,9 @@ const Products = () => {
   const contactRef = useRef<HTMLElement>(null);
   const partnersRef = useRef<HTMLElement>(null);
   const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
   const scrollToPartners = () => {
     partnersRef.current?.scrollIntoView({ behavior: "smooth" });

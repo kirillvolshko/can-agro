@@ -4,7 +4,7 @@ const Counter = () => {
       <div className="flex flex-col md:flex-row border border-[#DEDFE1] bg-[#FBFBFD]">
         <div className="flex flex-col text-center gap-2.5 border-b md:border-b-0 md:border-r border-[#DEDFE1] px-5 py-10 md:px-[60px] md:py-[80px] w-full">
           <p className="font-play font-bold text-[54px] md:text-[84px] text-[#618C85]">
-            25
+            20+
           </p>
           <p className="uppercase font-play font-bold text-[34px] text-[#373745]">
             Years
