@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(_req: NextRequest) {
   const urls = [
     "https://can-agro.com/",
     "https://can-agro.com/about",
@@ -10,15 +10,15 @@ export async function GET() {
   const content = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
-  .map(
-    (url) => `<url>
+    .map(
+      (url) => `<url>
   <loc>${url}</loc>
   <lastmod>${new Date().toISOString()}</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>`
-  )
-  .join("\n")}
+    )
+    .join("\n")}
 </urlset>`;
 
   return new NextResponse(content, {
