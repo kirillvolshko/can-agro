@@ -1,15 +1,30 @@
-import { MetadataRoute } from "next";
+import { NextResponse } from "next/server";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://can-agro.com",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-
-     { url: "https://can-agro.com/contacts", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-     { url: "https://can-agro.com/products", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+export async function GET() {
+  const urls = [
+    "https://can-agro.com/",
+    "https://can-agro.com/about",
+    "https://can-agro.com/contact",
   ];
+
+  const content = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (url) => `<url>
+  <loc>${url}</loc>
+  <lastmod>${new Date().toISOString()}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>`
+  )
+  .join("\n")}
+</urlset>`;
+
+  return new NextResponse(content, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }
