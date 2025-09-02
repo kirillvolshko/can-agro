@@ -15,6 +15,7 @@ import { useRef } from "react";
 
 const ContactUsSchema = z.object({
   name: z.string("Invalid"),
+  subject: z.string("Invalid"),
   phone: z.string("Invalid phone").refine(validator.isMobilePhone),
   email: z.email("Invalid email"),
   message: z.string(),
@@ -103,6 +104,11 @@ const ContactUs = forwardRef<HTMLElement>((props, ref) => {
                 control={form.control}
                 name="email"
                 placeholder="Email"
+              />
+              <InputField
+                control={form.control}
+                name="subject"
+                placeholder="Subject"
               />
               <TextareaField
                 control={form.control}

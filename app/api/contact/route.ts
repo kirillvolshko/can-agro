@@ -98,7 +98,7 @@ export async function POST(req: Request) {
         contact_name: formData.name || "John Doe",
         email_from: formData.email || "contact@example.com",
         mobile: formData.phone || "+1 (204) 325-1234",
-        name: `Subject from ${formData.name}`,
+        name: formData.subject,
         description: formData.message || "blablabla",
       },
     ]);
