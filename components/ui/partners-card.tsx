@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "./button";
 import { useState } from "react";
+import { cn } from "../../lib/utils";
 
 interface PropsCard {
   srcLogo: string;
@@ -33,12 +34,17 @@ const PartnersCard = ({ data }: { data: PropsCard }) => {
         />
       </div>
 
-      <div className="p-5 pt-10 flex flex-col gap-5 border-t border-[#DEDFE1]">
+      <div className="p-5 pt-10 flex flex-col  gap-5 border-t border-[#DEDFE1]">
         <p className="font-rubik font-bold text-[18px] h-[50px] text-[#373745] md:h-[69px]">
           {data.title}
         </p>
         <div className="flex flex-col  gap-2.5">
-          <p className="font-rubik font-light text-[#373745] text-[14px] md:text-[16px]">
+          <p
+            className={cn(
+              "font-rubik font-light text-[#373745] text-[14px] md:text-[16px]",
+              show ? "min-h-[400px]" : ""
+            )}
+          >
             {show ? data.description : data.description.slice(0, 115) + "..."}
           </p>
           <div
