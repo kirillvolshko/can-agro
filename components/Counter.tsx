@@ -1,3 +1,4 @@
+"use client";
 const Counter = () => {
   return (
     <section className="py-[100px] md:py-[120px] px-5 md:px-[150px] ">
